@@ -9,9 +9,9 @@ class Row extends Component {
     for (let i = 0; i < this.props.boxesCount; i++) {
       boxes.push(
         <Box
-            key={i}
+          key={"Box-"+i}
           boxStyle={{
-            marginLeft: i == 0 ? 0 : this.props.boxSpace + "px"
+            marginLeft: i === 0 ? 0 : this.props.boxSpace + "px"
           }}
         />
       );

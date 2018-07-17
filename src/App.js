@@ -47,8 +47,9 @@ class App extends Component {
     let rows = [];
     for(let i=0; i<this.state.rows; i++){
       rows.push(<Row 
+        key={"Row-"+i} 
         boxesCount={this.state.cols.split(',')[i]}
-        rowStyle={{marginTop:i==0?0:this.state.rowSpace+"px"}}
+        rowStyle={{marginTop:i===0?0:this.state.rowSpace+"px"}}
         boxSpace={this.state.colSpace}
       />);
     }
@@ -57,21 +58,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {/* no need of rows input, we have already input for columns for each row  */}
         <Input placeholder="No of Rows" name="no-of-rows" changeHandler = {this.rowsHandler} />
         <Input placeholder="Columns separated by Comma" name="columns-string" changeHandler = {this.colsHandler} />
         <Input placeholder="Row gutter" name="gutter-row" changeHandler = {this.rowSpaceHandler} />
         <Input placeholder="Column gutter" name="gutter-col" changeHandler = {this.colSpaceHandler} />
 
         {this.renderRows()}
-
-        {/* <input name="no-of-rows" onChange={this.rowsHandler} placeholder="Number of Rows"/>
-        <br />
-        <br />
-        <input name="columns-string" onChange={this.colsHandler} placeholder="Number of Boxes"/>
-        <br />
-        <input name="gutter-row" />
-        <input name="gutter-col" />
-        <br />  */}
       </div>
     );
   }

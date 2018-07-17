@@ -1,5 +1,9 @@
 .inputBox > input{
     border: 1px solid #888;
-    padding: 5px;
+    padding: 5px 10px;
     margin: 5px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    outline: none;
 }
